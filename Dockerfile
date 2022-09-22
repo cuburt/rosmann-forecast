@@ -8,6 +8,8 @@ WORKDIR /app
 COPY requirements.txt .
 
 ENV PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
+ENV PORT 5000
+ENV HOST 0.0.0.0
 
 # Install any needed packages specified in requirements.txt
 RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
@@ -15,7 +17,8 @@ RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 # Copy the rest of the working directory contents into the container at /app
 COPY . /app
 
-EXPOSE 5000
+
 # Run app.py when the container launches
 ENTRYPOINT ["python3","-u","serve.py"]
 # CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
+EXPOSE 5000
