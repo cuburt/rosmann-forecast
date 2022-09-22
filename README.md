@@ -38,7 +38,7 @@
     {"Sales": 285.78}
 
 
-| Key   | Description                                                       | Data Type  |
-|-------|-------------------------------------------------------------------|------------|
-| Sales | The turnover for any given day (this is what you are predicting). | Integer    |
+| Key   | Description                                                       | Data Type |
+|-------|-------------------------------------------------------------------|-----------|
+| Sales | The turnover for any given day (this is what you are predicting). | Float     |
 
