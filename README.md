@@ -42,3 +42,4 @@
 |-------|-------------------------------------------------------------------|-----------|
 | Sales | The turnover for any given day (this is what you are predicting). | Float     |
 
+*Note*. This service was rushly developed. Hence, it is not yet fully fault-tolerant. However, the developer has still so much in store for this project.
