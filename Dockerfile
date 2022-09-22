@@ -20,4 +20,4 @@ COPY . /app
 
 # Run app.py when the container launches
 # ENTRYPOINT ["python3","-u","serve.py"]
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 serve:app
