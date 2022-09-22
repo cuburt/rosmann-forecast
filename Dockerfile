@@ -15,6 +15,7 @@ RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 # Copy the rest of the working directory contents into the container at /app
 COPY . /app
 
+EXPOSE 5000
 # Run app.py when the container launches
-# ENTRYPOINT ["python3","-u","serve.py"]
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
+ENTRYPOINT ["python3","-u","serve.py"]
+# CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
