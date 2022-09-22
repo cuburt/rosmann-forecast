@@ -107,7 +107,7 @@ jobs:
           --platform managed \
           --allow-unauthenticated \
           --quiet \
-          --project ${{ env.PROJECT_ID }}
+          --project ${{ env.PROJECT_ID }} \
           --format json
 
 #        id: deploy
