@@ -6,13 +6,7 @@ from datetime import datetime
 from flask import Flask, request
 
 app = Flask(__name__)
-
-  
-def load():
-    local_model_storage_path = os.path.join("model_storage", f"rosmann.sav")
-    model = joblib.load(local_model_storage_path)
-    return model
-
+model = joblib.load(os.path.join("model_storage", f"rosmann.sav"))
 
 def format_request_payload(request):
 
@@ -32,12 +26,10 @@ def format_request_payload(request):
 
     return np.array([[i[1] for i in [(key, request[key]) for key in a_list if key in request]]])
     
-    
 @app.route('/predict', methods=['POST'])
 def predict():
 
     try:
-        model = load()
 
         _input = format_request_payload(request.get_json(force=True))
 
